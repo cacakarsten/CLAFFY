@@ -1,0 +1,6 @@
+{
+  "name": "CLAFFY",
+  "description": "Handmade flower brand. Where every bloom holds memories. Shop ready-made blooms or create your own custom flower arrangement.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

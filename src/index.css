@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme {
+  --color-claffy-cream: #FAF7F2;
+  --color-claffy-ivory: #FBF9F5;
+  --color-claffy-chocolate: #26150F;
+  --color-claffy-brown: #4A2E23;
+  --color-claffy-taupe: #826251;
+  --color-claffy-gold: #C5A059;
+  --color-claffy-gold-light: #EBD8B0;
+  --color-claffy-gold-dark: #9A7A38;
+  --color-claffy-sunflower: #DE9E36;
+  --color-claffy-orange: #C85A17;
+  --color-claffy-burgundy: #5A0C0E;
+  --color-claffy-red: #5A0C0E;
+  --color-claffy-yellow: #DE9E36;
+  --color-claffy-softyellow: #EBD8B0;
+  --color-claffy-warmbrown: #826251;
+
+  --font-serif: "Libre Baskerville", "Cormorant Garamond", Didot, "Bodoni MT", Georgia, serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #FBF9F5;
+    color: #26150F;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, .font-display, .font-serif {
+    font-family: var(--font-serif);
+    font-weight: 500;
+  }
+}
+
+/* Luxury Editorial Aesthetics */
+.gold-border {
+  border: 1px solid rgba(197, 160, 89, 0.45);
+}
+
+.gold-border-strong {
+  border: 1px solid #C5A059;
+}
+
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.6), transparent);
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #DFC282 0%, #C5A059 50%, #A8833C 100%);
+}
+
+.gold-metallic-text {
+  background: linear-gradient(135deg, #C5A059 0%, #DFC282 40%, #9A7A38 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.luxury-card, .craft-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 0.875rem;
+  box-shadow: 0 4px 20px -2px rgba(38, 21, 15, 0.04), 0 2px 6px -1px rgba(38, 21, 15, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover, .craft-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(197, 160, 89, 0.7);
+  box-shadow: 0 16px 32px -4px rgba(38, 21, 15, 0.08), 0 4px 12px -2px rgba(197, 160, 89, 0.12);
+}
+
+.craft-button-primary {
+  background-color: #26150F;
+  color: #FAF7F2;
+  border: 1px solid #C5A059;
+  border-radius: 9999px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 10px rgba(38, 21, 15, 0.08);
+}
+
+.craft-button-primary:hover {
+  background-color: #382017;
+  border-color: #DFC282;
+  color: #DFC282;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(38, 21, 15, 0.15), 0 0 12px rgba(197, 160, 89, 0.2);
+}
+
+.craft-button-primary:active {
+  transform: translateY(0);
+}
+
+.craft-button-gold {
+  background: linear-gradient(135deg, #DFC282 0%, #C5A059 50%, #A8833C 100%);
+  color: #1E120D;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 9999px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 12px rgba(197, 160, 89, 0.25);
+}
+
+.craft-button-gold:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.35);
+}
+
+.craft-button-secondary {
+  background-color: transparent;
+  color: #26150F;
+  border: 1px solid rgba(197, 160, 89, 0.6);
+  border-radius: 9999px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transition: all 0.25s ease;
+}
+
+.craft-button-secondary:hover {
+  background-color: rgba(197, 160, 89, 0.12);
+  border-color: #C5A059;
+  color: #26150F;
+}
+
+/* Subtle editorial scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9A7A38;
+}
