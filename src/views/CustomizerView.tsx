@@ -812,12 +812,17 @@ export const CustomizerView: React.FC<CustomizerViewProps> = ({
             ================================================== */}
         <div className="lg:col-span-5 sticky top-28 space-y-4">
           <div className="flex items-center justify-between px-1">
-            <span className="font-serif text-sm font-medium text-[#26150F] uppercase tracking-widest">
-              Live Atelier Preview
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="font-serif text-sm font-medium text-[#26150F] uppercase tracking-widest">
+                Interactive 3D Studio
+              </span>
+              <span className="text-[10px] uppercase font-sans tracking-wider px-2 py-0.5 rounded-full bg-[#C5A059]/20 text-[#C5A059] border border-[#C5A059]/30">
+                360° Orbit
+              </span>
+            </div>
             <span className="text-[11px] text-[#C5A059] font-medium flex items-center gap-1.5">
-              <RefreshCw className="w-3 h-3" />
-              Real-time Rendering
+              <RefreshCw className="w-3 h-3 animate-spin-slow" />
+              Live 3D Render
             </span>
           </div>
 
@@ -827,9 +832,9 @@ export const CustomizerView: React.FC<CustomizerViewProps> = ({
             showCardPreview={true}
           />
 
-          <div className="p-4 bg-white rounded-xl border border-[#C5A059]/30 text-center text-xs text-[#826251]">
+          <div className="p-4 bg-white rounded-xl border border-[#C5A059]/30 text-center text-xs text-[#826251] space-y-1">
             <p className="font-light leading-relaxed">
-              <strong className="text-[#26150F] font-medium">Craft Heritage:</strong> Because each petal and leaf is twisted by hand with high-density chenille yarn, each bloom possesses unique character and organic beauty.
+              <strong className="text-[#26150F] font-medium">Bespoke Tactile Realism:</strong> Rendered with high-density chenille velvet pile shading and authentic 3D spatial depth. Drag to view your commission from every angle.
             </p>
           </div>
         </div>

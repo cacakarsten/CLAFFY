@@ -22,6 +22,7 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
   const [activeShopKind, setActiveShopKind] = useState<ProductKind>('ready-made');
   const [activeOccasionFilter, setActiveOccasionFilter] = useState<string | null>(null);
+  const [activeCategoryFilter, setActiveCategoryFilter] = useState<string | null>('all');
 
   // Selected Product for Detail View
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(PRODUCTS[0]);
@@ -79,21 +80,27 @@ export default function App() {
   const navigateTo = (page: PageType, kind?: ProductKind) => {
     if (page === 'ready-made') {
       setActiveShopKind('ready-made');
+      setActiveCategoryFilter('all');
       setCurrentPage('shop');
       return;
     }
     if (page === 'custom') {
       setActiveShopKind('custom');
+      setActiveCategoryFilter('all');
       setCurrentPage('shop');
       return;
     }
     if (page === 'accessories') {
       setActiveShopKind('ready-made');
+      setActiveCategoryFilter('accessories');
       setCurrentPage('shop');
       return;
     }
     if (kind) {
       setActiveShopKind(kind);
+    }
+    if (page === 'shop' && !kind) {
+      setActiveCategoryFilter('all');
     }
     setCurrentPage(page);
   };
@@ -231,6 +238,7 @@ export default function App() {
             onAddToCart={handleAddToCart}
             onStartCustomizer={handleStartCustomizer}
             initialOccasionFilter={activeOccasionFilter}
+            initialCategoryFilter={activeCategoryFilter}
           />
         )}
 

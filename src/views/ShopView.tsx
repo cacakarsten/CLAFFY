@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Product, ProductKind } from '../types';
 import { Sparkles, SlidersHorizontal, ArrowRight } from 'lucide-react';
 import { OCCASIONS_LIST } from '../data/customizerOptions';
@@ -12,6 +12,7 @@ interface ShopViewProps {
   onAddToCart: (product: Product) => void;
   onStartCustomizer: (initialType?: 'bouquet' | 'basket' | 'box') => void;
   initialOccasionFilter?: string | null;
+  initialCategoryFilter?: string | null;
 }
 
 export const ShopView: React.FC<ShopViewProps> = ({
@@ -22,10 +23,17 @@ export const ShopView: React.FC<ShopViewProps> = ({
   onAddToCart,
   onStartCustomizer,
   initialOccasionFilter = null,
+  initialCategoryFilter = null,
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>(initialCategoryFilter || 'all');
   const [selectedOccasion, setSelectedOccasion] = useState<string>(initialOccasionFilter || 'all');
   const [sortBy, setSortBy] = useState<'featured' | 'price-low' | 'price-high'>('featured');
+
+  useEffect(() => {
+    if (initialCategoryFilter) {
+      setSelectedCategory(initialCategoryFilter);
+    }
+  }, [initialCategoryFilter]);
 
   // Categories depending on activeKind
   const readyMadeCategories = [
